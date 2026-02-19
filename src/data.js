@@ -508,6 +508,8 @@ export const semesters = {
   '1/2568': {
     key: '1/2568',
     label: 'ภาคเรียนที่ 1/2568',
+    teachingMediaUrl:
+      'https://drive.google.com/drive/folders/1_w1QMWfMpwHfy7OP6ZKxDOXOz5loehWk?usp=sharing',
     teachingProjectUrl: '/teaching-projects/โครงการสอน168.pdf',
     schedule: {
       meta: {
@@ -577,6 +579,8 @@ export const semesters = {
   '2/2568': {
     key: '2/2568',
     label: 'ภาคเรียนที่ 2/2568',
+    teachingMediaUrl:
+      'https://drive.google.com/drive/folders/1d7X4LA_jo3ye1mZf4msub-zg1GuMoXd_?usp=sharing',
     teachingProjectUrl: '/teaching-projects/โครงการสอน 268.pdf',
     schedule: {
       meta: {

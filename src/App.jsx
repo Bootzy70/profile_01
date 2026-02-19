@@ -222,7 +222,7 @@ function ActivityCard({ activity, reverse }) {
   )
 }
 
-function ScheduleTable({ schedule }) {
+function ScheduleTable({ schedule, mediaUrl }) {
   const meta = schedule?.meta
   const subjects = Array.isArray(schedule?.subjects) ? schedule.subjects : []
   const periods = Array.isArray(schedule?.periods) ? schedule.periods : []
@@ -314,14 +314,17 @@ function ScheduleTable({ schedule }) {
                   <table className="w-full border-collapse text-sm">
                     <thead>
                       <tr className="bg-brand-50/70">
-                        <th className="border border-slate-300 px-3 py-2 text-center font-semibold">
+                        <th className="border border-brand-200 px-3 py-2 text-center font-semibold">
                           รหัสวิชา
                         </th>
-                        <th className="border border-slate-300 px-3 py-2 text-center font-semibold">
+                        <th className="border border-brand-200 px-3 py-2 text-center font-semibold">
                           ชื่อรายวิชา
                         </th>
-                        <th className="border border-slate-300 px-3 py-2 text-center font-semibold">
+                        <th className="border border-brand-200 px-3 py-2 text-center font-semibold">
                           ท/ป/น
+                        </th>
+                        <th className="border border-brand-200 px-3 py-2 text-center font-semibold">
+                          สื่อการสอน
                         </th>
                       </tr>
                     </thead>
@@ -330,7 +333,7 @@ function ScheduleTable({ schedule }) {
                         <tr>
                           <td
                             className="border border-brand-200 px-3 py-6 text-center text-slate-500"
-                            colSpan={3}
+                            colSpan={4}
                           >
                             ยังไม่มีรายการรายวิชา
                           </td>
@@ -346,6 +349,20 @@ function ScheduleTable({ schedule }) {
                             </td>
                             <td className="border border-brand-200 px-3 py-2 text-center">
                               {s.tpn}
+                            </td>
+                            <td className="border border-brand-200 px-3 py-2 text-center">
+                              {mediaUrl ? (
+                                <a
+                                  href={mediaUrl}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="inline-flex items-center justify-center rounded-xl bg-brand-600 px-3 py-2 text-xs font-semibold text-white transition hover:bg-brand-700"
+                                >
+                                  เปิด
+                                </a>
+                              ) : (
+                                <span className="text-xs text-slate-400">-</span>
+                              )}
                             </td>
                           </tr>
                         ))
@@ -549,7 +566,7 @@ export default function App() {
               </a>
             </div>
           ) : null}
-          <ScheduleTable schedule={semester.schedule} />
+          <ScheduleTable schedule={semester.schedule} mediaUrl={semester.teachingMediaUrl} />
         </Section>
 
         <Section
