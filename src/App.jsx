@@ -236,14 +236,22 @@ function ScheduleTable({ schedule }) {
 
       if (p.isBreak) {
         tds.push(
-          <td key={p.key} className="border border-slate-300 bg-slate-100" />,
+          <td
+            key={p.key}
+            className="border border-brand-200 bg-brand-50/70"
+          />,
         )
         continue
       }
 
       const cell = schedule?.grid?.[dayKey]?.[p.key]
       if (!cell) {
-        tds.push(<td key={p.key} className="border border-slate-300" />)
+        tds.push(
+          <td
+            key={p.key}
+            className="border border-brand-200 bg-white/80"
+          />,
+        )
         continue
       }
 
@@ -256,7 +264,7 @@ function ScheduleTable({ schedule }) {
         <td
           key={p.key}
           colSpan={span}
-          className="border border-slate-300 px-2 py-2"
+          className="border border-brand-200 bg-white px-2 py-2"
         >
           <div className="text-center text-xs leading-snug">
             <div className="font-semibold">{cell.code}</div>
@@ -275,12 +283,12 @@ function ScheduleTable({ schedule }) {
 
   return (
     <div className="space-y-6">
-      <div className="overflow-hidden rounded-2xl border border-slate-300 bg-white shadow-soft">
+      <div className="overflow-hidden rounded-2xl border border-brand-200 bg-white shadow-soft">
         <div className="overflow-x-auto">
           <table className="min-w-[980px] w-full border-collapse text-sm text-slate-900">
             <tbody>
               <tr>
-                <td className="w-[240px] border border-slate-300 p-4 align-top">
+                <td className="w-[240px] border border-brand-200 bg-brand-50/40 p-4 align-top">
                   <div className="text-base font-semibold">{meta?.school ?? 'สถานศึกษา'}</div>
                   <div className="mt-3 grid gap-2 text-sm">
                     <div className="grid grid-cols-[84px_1fr] gap-2">
@@ -302,10 +310,10 @@ function ScheduleTable({ schedule }) {
                   </div>
                 </td>
 
-                <td className="border border-slate-300 p-0 align-top">
+                <td className="border border-brand-200 p-0 align-top">
                   <table className="w-full border-collapse text-sm">
                     <thead>
-                      <tr className="bg-slate-50">
+                      <tr className="bg-brand-50/70">
                         <th className="border border-slate-300 px-3 py-2 text-center font-semibold">
                           รหัสวิชา
                         </th>
@@ -321,7 +329,7 @@ function ScheduleTable({ schedule }) {
                       {subjects.length === 0 ? (
                         <tr>
                           <td
-                            className="border border-slate-300 px-3 py-6 text-center text-slate-500"
+                            className="border border-brand-200 px-3 py-6 text-center text-slate-500"
                             colSpan={3}
                           >
                             ยังไม่มีรายการรายวิชา
@@ -330,13 +338,13 @@ function ScheduleTable({ schedule }) {
                       ) : (
                         subjects.map((s) => (
                           <tr key={s.code}>
-                            <td className="border border-slate-300 px-3 py-2">
+                            <td className="border border-brand-200 px-3 py-2">
                               {s.code}
                             </td>
-                            <td className="border border-slate-300 px-3 py-2">
+                            <td className="border border-brand-200 px-3 py-2">
                               {s.name}
                             </td>
-                            <td className="border border-slate-300 px-3 py-2 text-center">
+                            <td className="border border-brand-200 px-3 py-2 text-center">
                               {s.tpn}
                             </td>
                           </tr>
@@ -351,11 +359,11 @@ function ScheduleTable({ schedule }) {
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-2xl border border-slate-300 bg-white shadow-soft">
+      <div className="overflow-hidden rounded-2xl border border-brand-200 bg-white shadow-soft">
         <div className="overflow-x-auto">
           <table className="min-w-[1200px] w-full border-collapse text-sm text-slate-900">
             <thead>
-              <tr className="bg-slate-50">
+              <tr className="bg-brand-50/70">
                 <th className="border border-slate-300 px-3 py-2 text-center font-semibold">
                   เวลา / วัน
                 </th>
@@ -363,8 +371,8 @@ function ScheduleTable({ schedule }) {
                   <th
                     key={p.key}
                     className={
-                      'border border-slate-300 px-3 py-2 text-center font-semibold ' +
-                      (p.isBreak ? 'bg-slate-100' : '')
+                      'border border-brand-200 px-3 py-2 text-center font-semibold ' +
+                      (p.isBreak ? 'bg-brand-50/80' : '')
                     }
                   >
                     <div className="whitespace-nowrap">{p.time}</div>
@@ -378,7 +386,7 @@ function ScheduleTable({ schedule }) {
             <tbody>
               {days.map((d) => (
                 <tr key={d.key}>
-                  <td className="border border-slate-300 px-3 py-3 font-semibold">
+                  <td className="border border-brand-200 bg-brand-50/40 px-3 py-3 font-semibold">
                     {d.label}
                   </td>
                   {renderDayCells(d.key)}
