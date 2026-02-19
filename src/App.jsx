@@ -508,7 +508,7 @@ export default function App() {
               </span>
             </span>
           }
-          subtitle="แสดงกิจกรรมที่ได้ทำระหว่างฝึกสอน (รูปอยู่ด้านขวา รายละเอียดอยู่ด้านซ้าย และสลับด้านในกิจกรรมถัดไป)"
+          subtitle="แสดงกิจกรรมที่ได้ทำระหว่างฝึกสอน"
         >
           <div className="space-y-6">
             {activities.map((a, idx) => (
