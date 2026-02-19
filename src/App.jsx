@@ -571,9 +571,11 @@ export default function App() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="flex flex-col gap-2 text-sm text-slate-600 md:flex-row md:items-center md:justify-between">
             <div>© {new Date().getFullYear()} ผลงานนักศึกษาฝึกสอน</div>
-            <div className="text-xs">
-              แก้ไขข้อมูลกิจกรรม/ตาราง/แผนการสอนได้ที่{' '}
-              <span className="font-mono">src/data.js</span>
+            <div>
+              นายบุศย์ จินะโต้ง <br />
+              มหาวิทยาลัยราชมงคลล้านนา เชียงใหม่<br />
+              เบอร์ : 065-383-5532<br />
+              Email : Bootchinatong@gmail.com
             </div>
           </div>
         </div>
